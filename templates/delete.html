@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Update User Information</title>
+    </head>
+    <body>
+        <h3>Are you sure you want to delete user: {{friend["first_name"]}}  {{friend["last_name"]}}</h3>
+        <form action='/friends/{{friend["id"]}}/delete' method="post">
+            <label for="yes">
+                <input type="submit" name="submit" value="Yes">
+            </label>
+        </form>
+        <a href='/'><button>NO</button></a>
+    </body>
+</html>

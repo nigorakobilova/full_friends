@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Friend's Information</title>
+    </head>
+    <body>
+    
+        <form action='/friends/{{friend["id"]}}' method="post">
+            <label for="first">First Name:
+                <input type=text name="first">
+            </label>
+            <label for="first">Last Name:
+                <input type=text name="last">
+            </label>
+            <label for="first">Email:
+                <input type=text name="email">
+            </label>
+            <input type=submit name="submit" value="Submit">
+            <input type=submit name="delete" value="Delete">
+        </form>
+       
+    </body>
+</html>

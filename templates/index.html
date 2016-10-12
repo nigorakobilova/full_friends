@@ -1,0 +1,47 @@
+<!doctype html> 
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Group | Project</title>
+        <link rel='stylesheet' href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <div id = "wrapper">
+        
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            {% for friend in all_friends: %}
+            <tr>
+                <th>{{ friend['id'] }}</th>
+                <td>{{ friend['first_name'] }}</td>
+                <td>{{ friend['last_name'] }}</td>
+                <td>{{ friend['email'] }}</td>
+                <td>
+                    <a href='/friends/{{friend["id"]}}/edit'><button>Update</button></a>
+                    <a href='/friends/{{friend["id"]}}/deletePage'><button>Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <hr>
+        <form action="/friends" method="post">
+            <h1>Add User</h1>
+            <label for="first">First name: 
+            <input type="text" name ="first">
+            </label>
+            <label for ="last">Last name:
+            <input type="text" name="last">
+            </label>
+            <label for="email">Email:
+            <input type = "text" name="email">
+            </label>
+            <input type= "submit" name="submit">
+        </form>
+    </div>
+</html>
